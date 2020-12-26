@@ -87,7 +87,9 @@ footer {
 }
 
 .app {
-  background-image: linear-gradient(to bottom, #ff5f6d 0%, #ffc371 100%);
+   background-image: url("https://i2.wp.com/www.ilsuperuovo.it/wp-content/uploads/2020/08/EFB047FD-6B60-42EC-8CBA-C0EFBC16F0F0.jpeg?w=678&ssl=1");
+  background-size: 800px 640px;
+  background-repeat: no-repeat;
   padding: 25px 25px 25px 30px;
   border: 1.5px solid #734046;
   border-radius: 10px;
