@@ -23,12 +23,6 @@ button {
   transition: all 200ms ease-in-out;
 }
 
-i {
-  font-size: 50px;
-  filter: drop-shadow(5px 7px 3px #68383e);
-  position: relative;
-}
-
 ul {
   margin: 0 0 10px;
   padding: 0;
@@ -138,8 +132,13 @@ button:hover {
   color: #734046;
 }
 .current-location {
-  font-size: 20px;
-  color: #fff;
+  color: red;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
+}
+
+.icons {
+  font-size: 50px;
+  filter: drop-shadow(5px 7px 3px #68383e);
+  position: relative;
 }
