@@ -25,108 +25,120 @@
   </head>
   <body>
     <div class="container">
-      <div class="app">
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-5">
-              <input
-                type="search"
-                placeholder="Enter your city"
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
+      <div class="app-wrapper">
+        <div class="app">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-5">
+                <input
+                  type="search"
+                  placeholder="Enter your city"
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <button
+                  type="submit"
+                  class="w-100"
+                  value="Let's go"
+                  id="button"
+                >
+                  Let's go
+                </button>
+              </div>
+              <div class="col-3">
+                <button type="submit" class="w-35" id="current-location-button">
+                  <i class="fas fa-map-pin"></i>
+                </button>
+              </div>
             </div>
-            <div class="col-3">
-              <button type="submit" class="w-100" value="Let's go" id="button">
-                Let's go
-              </button>
-            </div>
-            <div class="col-3">
-              <button type="submit" class="w-35" id="current-location-button">
-                <i class="fas fa-map-pin"></i>
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
 
-        <h1 id="city"></h1>
-        
+          <h1 id="city"></h1>
+
           <ul>
             <li id="date"></li>
             <li id="description"></li>
           </ul>
-        
-        <br />
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/mist.png"
-                alt="cloudy"
-                class="weather-icon float-left"
-              />
-              <div class="float-left">
-                <span class="temperature" id="temperature"> </span>
-                <span class="units">
-                  <a href="#" id="celsius">°C</a> |
-                  <a href="#" id="fahrenheit"> °F</a>
-                </span>
+
+          <br />
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/mist.png"
+                  alt="cloudy"
+                  class="weather-icon float-left"
+                />
+                <div class="float-left">
+                  <span class="temperature" id="temperature"> </span>
+                  <span class="units">
+                    <a href="#" id="celsius">°C</a> |
+                    <a href="#" id="fahrenheit"> °F</a>
+                  </span>
+                </div>
               </div>
             </div>
+            <div class="col-6 forecast">
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity: <span id="humidity"> </span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
           </div>
-          <div class="col-6 forecast">
-            <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: <span id="humidity"> </span>%</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
-            </ul>
-          </div>
+
+          <br />
+
+          <footer>
+            <div class="forecast">
+              <div class="row">
+                <span class="col-3">12°C</span>
+                <span class="col-3">10°C</span>
+                <span class="col-3">9°C</span>
+                <span class="col-3">11°C</span>
+              </div>
+            </div>
+
+            <div class="icons">
+              <div class="row">
+                <span class="col-3"><i class="fas fa-cloud-sun"></i></span>
+                <span class="col-3"><i class="fas fa-cloud-rain"></i></span>
+                <span class="col-3"><i class="fas fa-snowflake"></i></span>
+                <span class="col-3"><i class="fas fa-bolt"></i></span>
+              </div>
+            </div>
+
+            <div class="day">
+              <div class="row">
+                <span class="col-3">Mon</span>
+                <span class="col-3">Tue</span>
+                <span class="col-3">Wed</span>
+                <span class="col-3">Thu</span>
+              </div>
+            </div>
+          </footer>
         </div>
+        <small class="open-source">
+          <a
+            href="https://github.com/chiarabarchiesi3/weather-app"
+            target="_blank"
+            class="open-source"
+          >
+            Open-source code</a
+          >
 
-        <br />
-
-        <footer>
-          <div class="forecast">
-            <div class="row">
-              <span class="col-3">12°C</span>
-              <span class="col-3">10°C</span>
-              <span class="col-3">9°C</span>
-              <span class="col-3">11°C</span>
-            </div>
-          </div>
-
-          <div class="icons">
-            <div class="row">
-              <span class="col-3"><i class="fas fa-cloud-sun"></i></span>
-              <span class="col-3"><i class="fas fa-cloud-rain"></i></span>
-              <span class="col-3"><i class="fas fa-snowflake"></i></span>
-              <span class="col-3"><i class="fas fa-bolt"></i></span>
-            </div>
-          </div>
-
-          <div class="day">
-            <div class="row">
-              <span class="col-3">Mon</span>
-              <span class="col-3">Tue</span>
-              <span class="col-3">Wed</span>
-              <span class="col-3">Thu</span>
-            </div>
-          </div>
-
-          <small class="open-source">
-            <a
-              href="https://github.com/chiarabarchiesi3/weather-app"
-              target="_blank"
-              class="name"
-            >
-              Open-source code</a
-            >
-
-            , by Chiara Barchiesi
-          </small>
-        </footer>
+          ,<a
+            href="https://www.linkedin.com/in/chiara-barchiesi-a6470414a/"
+            target="_blank"
+            class="name"
+          >
+            by Chiara Barchiesi</a
+          >
+        </small>
       </div>
     </div>
     <script src="index.js"></script>
