@@ -84,12 +84,12 @@ footer {
 
 .app-wrapper {
   margin: 30px auto;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .app {
   background-image: url("https://cdn.pixabay.com/photo/2016/01/25/02/33/creation-of-man-1159966_1280.jpg");
-  background-size: 900px 682px;
+  background-size: 943px 682px;
   background-repeat: no-repeat;
   padding: 25px 25px 25px 30px;
   border: 1.5px solid #734046;
