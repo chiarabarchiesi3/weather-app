@@ -29,7 +29,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-dateElement.innerHTML = `${day} ${month} ${date} ${hours}:${minutes} ${year}`;
+dateElement.innerHTML = `${day} ${date} ${month} ${hours}:${minutes} ${year}`;
 
 function search(event) {
   event.preventDefault();
@@ -49,6 +49,13 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  let iconElement = document.querySelector("#main-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
 function searchCity(city) {
