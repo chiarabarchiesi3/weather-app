@@ -59,24 +59,33 @@ footer {
   text-align: center;
 }
 
-.weather-icon {
+.weather-temperature icon {
   height: 64px;
   margin-right: 10px;
   filter: drop-shadow(4px 4px 2px #68383e);
 }
 
-.temperature {
+.weather-temperature strong {
   color: #fff;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
 }
 
-.units {
+.weather-temperature .units {
   position: relative;
   top: -34px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.weather-temperature .active {
+  color: #fff;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
 
 .app-wrapper {
