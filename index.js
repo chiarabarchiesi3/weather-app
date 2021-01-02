@@ -1,35 +1,43 @@
-let now = new Date();
-let dateElement = document.querySelector("#date");
-let date = now.getDate();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let year = now.getFullYear();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
+function formatDate(timestamp) {
+  let dateElement = document.querySelector("#date");
+  let date = now.getDate();
+  let year = now.getFullYear();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[now.getDay()];
 
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dic",
-];
-let month = months[now.getMonth()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
+  ];
+  let month = months[now.getMonth()];
 
-dateElement.innerHTML = `${day} ${date} ${month} ${hours}:${minutes} ${year}`;
+  dateElement.innerHTML = `${day} ${date} ${month} ${hours}:${minutes} ${year}`;
+}
+
+function formatHours(timestamp) {
+  let now = new Date(timestamp);
+
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
 
 function search(event) {
   event.preventDefault();
@@ -39,7 +47,6 @@ function search(event) {
 }
 
 function displayWeatherCondition(response) {
-  
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -61,12 +68,42 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-2">
+                  <h3>
+                  ${formatHours(forecast.dt * 1000)}
+                  </h3>
+                  <img
+                    src="http://openweathermap.org/img/wn/${
+                      forecast.weather[0].icon
+                    }@2x.png"
+                    
+                  />
+                <div class="weather-forecast-temperature">
+                <strong>
+                ${Math.round(forecast.main.temp_min)}°
+                </strong>|
+                ${Math.round(forecast.main.temp_max)}°
+                </div>
+                </div>`;
+  }
+}
+
 function searchCity(city) {
   let apiKey = "c29a858911833a54a3715b8ef9de5667";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {

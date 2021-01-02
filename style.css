@@ -59,6 +59,29 @@ footer {
   text-align: center;
 }
 
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.app-wrapper {
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.app {
+  background-image: url("https://cdn.pixabay.com/photo/2016/01/25/02/33/creation-of-man-1159966_1280.jpg");
+  background-size: 943px 682px;
+  background-repeat: no-repeat;
+  padding: 25px 25px 25px 30px;
+  border: 1.5px solid #734046;
+  border-radius: 10px;
+  box-shadow: 9px 9px 5px #68383e;
+}
+
 .weather-temperature icon {
   height: 64px;
   margin-right: 10px;
@@ -88,22 +111,7 @@ footer {
   text-decoration: none;
 }
 
-.app-wrapper {
-  margin: 30px auto;
-  max-width: 800px;
-}
-
-.app {
-  background-image: url("https://cdn.pixabay.com/photo/2016/01/25/02/33/creation-of-man-1159966_1280.jpg");
-  background-size: 943px 682px;
-  background-repeat: no-repeat;
-  padding: 25px 25px 25px 30px;
-  border: 1.5px solid #734046;
-  border-radius: 10px;
-  box-shadow: 9px 9px 5px #68383e;
-}
-
-.forecast,
+.weather-forecast,
 .day {
   font-size: 25px;
   font-weight: bold;
