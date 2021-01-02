@@ -39,9 +39,10 @@ function search(event) {
 }
 
 function displayWeatherCondition(response) {
+  console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
-    celsiusTemperature
+    response.data.main.temp
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
