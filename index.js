@@ -1,5 +1,6 @@
 function formatDate(timestamp) {
-  let dateElement = document.querySelector("#date");
+  let now = new Date(timestamp);
+
   let date = now.getDate();
   let year = now.getFullYear();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -21,7 +22,9 @@ function formatDate(timestamp) {
   ];
   let month = months[now.getMonth()];
 
-  dateElement.innerHTML = `${day} ${date} ${month} ${hours}:${minutes} ${year}`;
+  document.querySelector(
+    "#date"
+  ).innerHTML = `${day} ${date} ${month} ${hours}:${minutes}${year}`;
 }
 
 function formatHours(timestamp) {
@@ -86,10 +89,11 @@ function displayForecast(response) {
                     
                   />
                 <div class="weather-forecast-temperature">
-                <strong>
-                ${Math.round(forecast.main.temp_min)}°
-                </strong>|
+               
+                ${Math.round(forecast.main.temp_min)}°|
+                 <strong>
                 ${Math.round(forecast.main.temp_max)}°
+                </strong>
                 </div>
                 </div>`;
   }
