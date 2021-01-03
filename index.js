@@ -51,6 +51,7 @@ function search(event) {
 }
 
 function displayWeatherCondition(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -59,8 +60,13 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  document.querySelector("#feels").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 
   celsiusTemperature = response.data.main.temp;
 
@@ -92,9 +98,9 @@ function displayForecast(response) {
                 <div class="weather-forecast-temperature">
                
                 ${Math.round(forecast.main.temp_min)}°|
-                 <strong>
+                 <span class ="max">
                 ${Math.round(forecast.main.temp_max)}°
-                </strong>
+                </span>
                 </div>
                 </div>`;
   }
