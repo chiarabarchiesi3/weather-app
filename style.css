@@ -129,7 +129,7 @@ footer {
   height: 15px;
   line-height: 15px;
   padding-top: 7px;
-  filter: drop-shadow(4px 4px 2px #68383e);
+  filter: drop-shadow(4px 4px 2px #49282c);
 }
 
 .weather-forecast-temperature {
@@ -144,7 +144,6 @@ footer {
   margin: 0 auto;
   height: 55px;
   width: 55px;
-  filter: drop-shadow(4px 4px 2px #68383e);
 }
 
 button:hover {
