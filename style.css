@@ -43,8 +43,6 @@ li {
 
 a {
   color: #734046;
-  font-weight: bold;
-  font-size: 20px;
 }
 
 small {
@@ -84,7 +82,7 @@ small {
   margin-right: 10px;
   height: 64px;
   width: 64px;
-  filter: drop-shadow(4px 4px 2px #68383e);
+  filter: drop-shadow(4px 4px 1px #49282c);
 }
 
 .weather-temperature strong {
@@ -92,6 +90,7 @@ small {
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
+  filter: drop-shadow(4px 4px 1px #68383e);
 }
 
 .weather-temperature .units {
@@ -99,6 +98,8 @@ small {
   top: -34px;
   font-size: 20px;
   font-weight: bold;
+
+  filter: drop-shadow(4px 4px 2px #68383e);
 }
 
 .weather-temperature .active {
