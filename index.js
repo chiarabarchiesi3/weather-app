@@ -22,10 +22,11 @@ function formatDate(timestamp) {
   ];
   let month = months[now.getMonth()];
 
-  document.querySelector(
-    "#date"
-  ).innerHTML = `${day} ${date} ${month} ${hours}:${minutes}${year}`;
+  return `${day} ${date} ${month} ${formatHours(now)} ${year}`;
 }
+
+let now = new Date();
+document.querySelector("#date").innerHTML = formatDate(now);
 
 function formatHours(timestamp) {
   let now = new Date(timestamp);
